@@ -9,7 +9,7 @@ import {
   FileText,
   CreditCard,
   Star,
-  Navigation,
+  Navigation as NavigationIcon,
   Briefcase,
   User,
   Clock,
@@ -121,7 +121,7 @@ const SOCIAL_LINKS = [
 
 // Icon mapping for efficient rendering
 const ICON_MAP = {
-  Navigation,
+  Navigation: NavigationIcon,
   Globe,
   Briefcase,
   Star,
