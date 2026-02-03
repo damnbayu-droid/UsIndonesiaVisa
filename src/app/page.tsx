@@ -201,7 +201,7 @@ export default function Home() {
           {/* Select Your Country CTA */}
           <div className="text-center">
             <a
-              href="https://indonesianvisas.com/apply"
+              href="https://indonesianvisas.com"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-900 text-white px-10 py-6 rounded-full font-black text-xl md:text-2xl hover:bg-amber-400 hover:text-slate-800 transition-all duration-300 hover:scale-105 shadow-xl inline-flex items-center gap-4"
