@@ -131,8 +131,54 @@
   <!-- Custom Visa Solution -->
   <url>
     <loc>https://usindonesiavisa.online/services</loc>
-    <lastmod>2026-01-26T18:48:51.265Z</lastmod>
+    <lastmod>2026-03-26T07:58:48Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- HTML Sitemap -->
+  <url>
+    <loc>https://usindonesiavisa.online/sitemap</loc>
+    <lastmod>2026-03-26T07:58:48Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Destination Cluster -->
+  <url>
+    <loc>https://usindonesiavisa.online/visa-indonesia</loc>
+    <lastmod>2026-03-26T07:58:48Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://usindonesiavisa.online/visa-bali</loc>
+    <lastmod>2026-03-26T07:58:48Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://usindonesiavisa.online/visa-jakarta</loc>
+    <lastmod>2026-03-26T07:58:48Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://usindonesiavisa.online/visa-lombok</loc>
+    <lastmod>2026-03-26T07:58:48Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://usindonesiavisa.online/visa-surabaya</loc>
+    <lastmod>2026-03-26T07:58:48Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://usindonesiavisa.online/visa-jogja</loc>
+    <lastmod>2026-03-26T07:58:48Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

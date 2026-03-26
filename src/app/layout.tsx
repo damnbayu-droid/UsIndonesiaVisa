@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "US Indonesia Visa Agency" }],
   metadataBase: new URL("https://usindonesiavisa.online"),
+  icons: {
+    icon: "/Logo.webp",
+    apple: "/Logo.webp",
+  },
   alternates: {
     canonical: "https://usindonesiavisa.online",
   },
@@ -62,6 +66,13 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  other: {
+    "geo.region": "US",
+    "geo.placename": "United States",
+    "geo.position": "37.09024;-95.712891",
+    "ICBM": "37.09024, -95.712891",
+    "format-detection": "telephone=no",
   },
 };
 

@@ -1,137 +1,23 @@
+import React from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import VisaCard from '@/components/VisaCard';
 import {
-  Globe,
-  RefreshCw,
-  MessageCircle,
-  CheckCircle2,
-  Send,
-  FileText,
-  CreditCard,
-  Star,
-  Navigation as NavigationIcon,
-  Briefcase,
-  User,
-  Clock,
-  HeadphonesIcon as Headphones,
   ArrowRight,
-  MapPin,
-  Mail,
   Plane,
   Heart,
-} from 'lucide-react';
-
-// Static data moved outside component to prevent recreation on every render
-const VISA_SERVICES = [
-  {
-    title: "B1 VOA / Extension",
-    description: "30-day visa on arrival with extension options. Perfect for short visits and tourism.",
-    link: "https://indonesianvisas.com/services/B1",
-    icon: "Navigation",
-  },
-  {
-    title: "C1 Visit Visa",
-    description: "Single entry visit visa for tourism purposes. Valid for 60 days with flexible dates.",
-    link: "https://indonesianvisas.com/services/C1",
-    icon: "Globe",
-  },
-  {
-    title: "C2 Business Visa",
-    description: "Business visa for meetings and conferences. Includes multiple entry options.",
-    link: "https://indonesianvisas.com/services/C2",
-    icon: "Briefcase",
-  },
-  {
-    title: "C12 Pre-Investment Visa",
-    description: "Pre-investment visa for business setup. Ideal for entrepreneurs and investors.",
-    link: "https://indonesianvisas.com/services/C12",
-    icon: "Star",
-  },
-  {
-    title: "D1 Tourist Visa",
-    description: "60-day tourist visa (B211A) with extensions up to 180 days total stay.",
-    link: "https://indonesianvisas.com/services/D1",
-    icon: "User",
-  },
-  {
-    title: "D2 Business Visa",
-    description: "Multiple entry business visa for professionals. Valid up to 12 months.",
-    link: "https://indonesianvisas.com/services/D2",
-    icon: "FileText",
-  },
-  {
-    title: "D12 Pre Investment",
-    description: "Pre-investment visa for business setup. Ideal for entrepreneurs and investors.",
-    link: "https://indonesianvisas.com/services/D12",
-    icon: "Star",
-  },
-  {
-    title: "E33G Digital Nomad",
-    description: "5-year digital nomad visa for remote workers. Live and work in Indonesia long-term.",
-    link: "https://indonesianvisas.com/services/E33G",
-    icon: "Globe",
-  },
-  {
-    title: "E28A Investment Kitas",
-    description: "Investment-based residence permit. Long-term stay for investors.",
-    link: "https://indonesianvisas.com/services/E28A",
-    icon: "CreditCard",
-  },
-  {
-    title: "Custom Visa",
-    description: "Tailored visa solutions for unique cases. We handle special requirements.",
-    link: "https://indonesianvisas.com/services",
-    icon: "FileText",
-  },
-] as const;
-
-const BENEFITS = [
-  {
-    title: "Fast Processing",
-    description: "Express service available with same-day processing options for urgent applications",
-    icon: "Clock",
-  },
-  {
-    title: "99% Success Rate",
-    description: "Proven track record with 10,000+ visas processed successfully worldwide",
-    icon: "CheckCircle2",
-  },
-  {
-    title: "24/7 Support",
-    description: "Round-the-clock WhatsApp support for your peace of mind anytime, anywhere",
-    icon: "Headphones",
-  },
-  {
-    title: "97 Countries",
-    description: "We serve applicants from 97 countries worldwide with local expertise",
-    icon: "Globe",
-  },
-] as const;
-
-const SOCIAL_LINKS = [
-  { name: "Telegram", url: "https://t.me/IndonesianVisas", bgClass: "bg-slate-800" },
-  { name: "Instagram", url: "https://instagram.com/balihelp.id", bgClass: "bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600" },
-  { name: "TikTok", url: "https://www.tiktok.com/@balihelp.id", bgClass: "bg-black" },
-  { name: "Facebook", url: "https://facebook.com/BaliHelp", bgClass: "bg-blue-600" },
-  { name: "Twitter", url: "https://twitter.com/IndonesianVisas", bgClass: "bg-sky-500" },
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/bayu-damopolii-887ab883/", bgClass: "bg-blue-700" },
-  { name: "YouTube", url: "https://youtube.com/@balihelp", bgClass: "bg-red-600" },
-] as const;
-
-
-// Icon mapping for efficient rendering
-const ICON_MAP = {
-  Navigation: NavigationIcon,
   Globe,
   Briefcase,
   Star,
-  User,
-  FileText,
-  CreditCard,
-  Clock,
   CheckCircle2,
-  Headphones,
-} as const;
+  Send,
+  RefreshCw,
+  MessageCircle,
+  Mail,
+  MapPin,
+} from 'lucide-react';
+import { VISA_SERVICES, BENEFITS, ICON_MAP } from '@/lib/constants';
 
 export default function Home() {
   const jsonLd = {
@@ -263,25 +149,9 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
-            {VISA_SERVICES.map((service, index) => {
-              const IconComponent = ICON_MAP[service.icon as keyof typeof ICON_MAP];
-              return (
-                <div key={index} className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="text-slate-800 mb-4">{IconComponent && <IconComponent className="w-16 h-16" aria-hidden="true" />}</div>
-                  <h3 className="text-lg md:text-xl font-bold mb-3 text-slate-800">{service.title}</h3>
-                  <p className="text-sm md:text-base text-slate-600 mb-6">{service.description}</p>
-                  <a
-                    href={service.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm md:text-base font-semibold text-slate-800 hover:text-blue-900 transition-colors"
-                    aria-label={`Learn more about ${service.title} services`}
-                  >
-                    Learn More <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                  </a>
-                </div>
-              );
-            })}
+            {VISA_SERVICES.map((service, index) => (
+              <VisaCard key={index} {...service} />
+            ))}
           </div>
           <div className="text-center">
             <a
@@ -583,16 +453,15 @@ export default function Home() {
             <p className="text-lg md:text-xl text-slate-600">Your trusted partner for seamless Indonesian visa processing from United States</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {BENEFITS.map((benefit, index) => {
-              const IconComponent = ICON_MAP[benefit.icon as keyof typeof ICON_MAP];
-              return (
-                <div key={index} className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-100 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="text-slate-800 mb-4">{IconComponent && <IconComponent className="w-20 h-20" aria-hidden="true" />}</div>
-                  <h3 className="text-lg md:text-xl font-bold mb-3 text-slate-800">{benefit.title}</h3>
-                  <p className="text-sm md:text-base text-slate-600">{benefit.description}</p>
+            {BENEFITS.map((benefit, index) => (
+              <div key={index} className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-100 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="text-slate-800 mb-4">
+                  {ICON_MAP[benefit.icon as keyof typeof ICON_MAP] && React.createElement(ICON_MAP[benefit.icon as keyof typeof ICON_MAP] as any, { className: "w-20 h-20 mx-auto", "aria-hidden": "true" })}
                 </div>
-              );
-            })}
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-slate-800">{benefit.title}</h3>
+                <p className="text-sm md:text-base text-slate-600">{benefit.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -673,70 +542,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="mt-auto bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12">
-            <div className="md:col-span-2">
-              <h2 className="text-2xl md:text-4xl font-black mb-4 md:mb-6 text-white">US Indonesia Visa</h2>
-              <p className="text-slate-300 text-base md:text-lg mb-4 md:mb-6">
-                Professional United States to Indonesia visa services with 16+ years experience. Fast, reliable, and trusted by thousands from the US and worldwide.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4 md:mb-6 text-white">Quick Links</h3>
-              <ul className="space-y-2 md:space-y-3">
-                <li><a href="https://indonesianvisas.com/apply" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">Apply Now</a></li>
-                <li><a href="https://indonesianvisas.com/extend" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">Extend Visa</a></li>
-                <li><a href="https://indonesianvisas.com/services" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">Services</a></li>
-                <li><a href="https://indonesianvisas.com/faq" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">FAQ</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-4 md:mb-6 text-white">Policies</h3>
-              <ul className="space-y-2 md:space-y-3">
-                <li><a href="https://indonesianvisas.com/privacy" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="https://indonesianvisas.com/terms" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="https://indonesianvisas.com/refund" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">Refund Policy</a></li>
-                <li><a href="https://indonesianvisas.com/disclaimer" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">Disclaimer</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="border-t border-slate-700 pt-6 md:pt-8 mb-6 md:mb-8">
-            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-              {SOCIAL_LINKS.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${social.bgClass} w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white font-bold text-xs md:text-sm hover:scale-110 transition-transform`}
-                  aria-label={`Follow us on ${social.name}`}
-                >
-                  {social.name.charAt(0)}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="border-t border-slate-600 pt-6 pb-4 text-center">
-            <p className="text-slate-300 text-sm md:text-base mb-4 font-semibold">© 2026 US Indonesia Visa™</p>
-            <p className="text-slate-300 text-xs md:text-sm mb-4">Operated by PT Indonesian Visas Agency (Indonesia).</p>
-            <p className="text-slate-300 text-xs md:text-sm mb-4">All Rights Reserved.</p>
-            <div className="mb-4">
-              <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 text-xs md:text-sm">
-                <a href="https://bali.enterprises" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">bali.enterprises</a>
-                <span className="text-slate-500">•</span>
-                <a href="https://indonesianvisas.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">indonesianvisas.com</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
+      <Footer />
     </div>
   );
 }
