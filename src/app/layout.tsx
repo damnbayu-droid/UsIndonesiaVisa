@@ -54,6 +54,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "US Indonesia Visa | Official US-Indonesia Visa Gateway",
     description: "Professional Indonesian visa services for US citizens with 16+ years experience. Fast, reliable, and secure.",
+    site: "@IndonesianVisas",
+    creator: "@IndonesianVisas",
     images: ["/images/us_indonesia_relationship.png"],
   },
   robots: {
